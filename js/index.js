@@ -40,3 +40,32 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+let navA = document.querySelectorAll('nav a');
+navA[0].textContent = siteContent['nav']['nav-item-1'];
+navA[1].textContent = siteContent['nav']['nav-item-2'];
+navA[2].textContent = siteContent['nav']['nav-item-3'];
+navA[3].textContent = siteContent['nav']['nav-item-4'];
+navA[4].textContent = siteContent['nav']['nav-item-5'];
+navA[5].textContent = siteContent['nav']['nav-item-6'];
+// How to do this with for each????? 
+// navA.forEach(link => {
+//   for (let index = 1; index < siteContent[nav].length-1; index++) {
+//     link.textContent = siteContent['nav']['nav-item-[index]']
+//   }
+// });
+// Alternate thought is this: how to make an array of json nav-items so that you can pass in the data using either a spread operator or the .apply method like: .apply(null,'array-of-nav-items')
+
+// Or maybe see if there is a way to use the spread operator in the Json object to get this to work...
+
+let headerText = document.querySelector('.cta-text h1');
+headerText.textContent = siteContent['cta']['h1'];
+let headerButton = document.querySelector('.cta-text button');
+headerButton.textContent = siteContent['cta']['button'];
+
+
+let mainImg = document.getElementById('cta-img');
+mainImg.setAttribute('src', siteContent['cta']["img-src"]);
+
+// let topContentHeaders = document.querySelectorAll('.topContent h4');
+// topContentHeaders[0].textContent = siteContent['main-content']['features-h4'];
+// topContentHeaders[1].textContent = siteContent['main-content']['vision-h4'];
