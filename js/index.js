@@ -90,3 +90,6 @@ contactSection[0].textContent = siteContent['contact']['contact-h4'];
 contactSection[1].textContent = siteContent['contact']['address'];
 contactSection[2].textContent = siteContent['contact']['phone'];
 contactSection[3].textContent = siteContent['contact']['email'];
+
+let footerText = document.querySelector('footer p');
+footerText.textContent = siteContent['footer']['copyright'];
