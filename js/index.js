@@ -93,3 +93,28 @@ contactSection[3].textContent = siteContent['contact']['email'];
 
 let footerText = document.querySelector('footer p');
 footerText.textContent = siteContent['footer']['copyright'];
+
+
+/* task 3
+* [X] Change the color of the navigation text to be green.
+* [X] Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
+* [X] Check your work by looking at the [original html](original.html) in the browser
+*/
+
+//change to green:
+
+navA.forEach(item => item.style.color = "green");
+
+//create 2 new items and add them to the nav
+
+let newItemA = document.createElement('a');
+newItemA.href = "#";
+newItemA.textContent = "Prepend!"
+newItemA.style.color='green';
+let newItemB = document.createElement('a');
+newItemB.href = "#";
+newItemB.textContent = "Append!"
+newItemB.style.color='green';
+
+document.querySelector('nav').prepend(newItemA);
+document.querySelector('nav').append(newItemB);
