@@ -81,3 +81,12 @@ contentText[1].textContent = siteContent['main-content']['about-content'];
 contentText[2].textContent = siteContent['main-content']['services-content'];
 contentText[3].textContent = siteContent['main-content']['product-content'];
 contentText[4].textContent = siteContent['main-content']['vision-content'];
+
+let middleBanner = document.getElementById('middle-img');
+middleBanner.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+let contactSection = document.querySelectorAll('.contact h4, .contact p');
+contactSection[0].textContent = siteContent['contact']['contact-h4'];
+contactSection[1].textContent = siteContent['contact']['address'];
+contactSection[2].textContent = siteContent['contact']['phone'];
+contactSection[3].textContent = siteContent['contact']['email'];
