@@ -40,3 +40,81 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+let navA = document.querySelectorAll('nav a');
+navA[0].textContent = siteContent['nav']['nav-item-1'];
+navA[1].textContent = siteContent['nav']['nav-item-2'];
+navA[2].textContent = siteContent['nav']['nav-item-3'];
+navA[3].textContent = siteContent['nav']['nav-item-4'];
+navA[4].textContent = siteContent['nav']['nav-item-5'];
+navA[5].textContent = siteContent['nav']['nav-item-6'];
+// How to do this with for each????? 
+// navA.forEach(link => {
+//   for (let index = 1; index < siteContent[nav].length-1; index++) {
+//     link.textContent = siteContent['nav']['nav-item-[index]']
+//   }
+// });
+// Alternate thought is this: how to make an array of json nav-items so that you can pass in the data using either a spread operator or the .apply method like: .apply(null,'array-of-nav-items')
+
+// Or maybe see if there is a way to use the spread operator in the Json object to get this to work...
+
+let headerText = document.querySelector('.cta-text h1');
+headerText.textContent = siteContent['cta']['h1'];
+let headerButton = document.querySelector('.cta-text button');
+headerButton.textContent = siteContent['cta']['button'];
+
+
+let mainImg = document.getElementById('cta-img');
+mainImg.setAttribute('src', siteContent['cta']["img-src"]);
+
+let contentHeaders = document.querySelectorAll('.top-content h4, .bottom-content h4');
+// or
+// let contentHeaders = document.querySelectorAll('h4');
+contentHeaders[0].textContent = siteContent['main-content']['features-h4'];
+contentHeaders[1].textContent = siteContent['main-content']['about-h4'];
+contentHeaders[2].textContent = siteContent['main-content']['services-h4'];
+contentHeaders[3].textContent = siteContent['main-content']['product-h4'];
+contentHeaders[4].textContent = siteContent['main-content']['vision-h4'];
+
+let contentText = document.querySelectorAll('.top-content p, .bottom-content p');
+contentText[0].textContent = siteContent['main-content']['features-content'];
+contentText[1].textContent = siteContent['main-content']['about-content'];
+contentText[2].textContent = siteContent['main-content']['services-content'];
+contentText[3].textContent = siteContent['main-content']['product-content'];
+contentText[4].textContent = siteContent['main-content']['vision-content'];
+
+let middleBanner = document.getElementById('middle-img');
+middleBanner.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+let contactSection = document.querySelectorAll('.contact h4, .contact p');
+contactSection[0].textContent = siteContent['contact']['contact-h4'];
+contactSection[1].textContent = siteContent['contact']['address'];
+contactSection[2].textContent = siteContent['contact']['phone'];
+contactSection[3].textContent = siteContent['contact']['email'];
+
+let footerText = document.querySelector('footer p');
+footerText.textContent = siteContent['footer']['copyright'];
+
+
+/* task 3
+* [X] Change the color of the navigation text to be green.
+* [X] Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
+* [X] Check your work by looking at the [original html](original.html) in the browser
+*/
+
+//change to green:
+
+navA.forEach(item => item.style.color = "green");
+
+//create 2 new items and add them to the nav
+
+let newItemA = document.createElement('a');
+newItemA.href = "#";
+newItemA.textContent = "Prepend!"
+newItemA.style.color='green';
+let newItemB = document.createElement('a');
+newItemB.href = "#";
+newItemB.textContent = "Append!"
+newItemB.style.color='green';
+
+document.querySelector('nav').prepend(newItemA);
+document.querySelector('nav').append(newItemB);
